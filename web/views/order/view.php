@@ -29,12 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-//            'name',
-            [
-                'attribute' => 'name',
-                'format' => 'raw',
-                'value' => Html::tag('b', $model->name)
-            ],
+            'name',
             'address',
             'email:email',
             'phone',

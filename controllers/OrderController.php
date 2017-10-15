@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Order;
-use yii\data\ActiveDataProvider;
+use app\models\OrderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,14 +35,13 @@ class OrderController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Order::find(),
-            'pagination' => [
-                'pageSize' => 3,
-            ],            
-        ]);
+        $searchModel = new OrderSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $dataProvider->pagination->pageSize = 3;
+        
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

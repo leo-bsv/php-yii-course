@@ -16,12 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <!-- $form->field($model, 'address')->textInput(['maxlength' => true]) -->
-    <?= $form->field($model, 'address')->dropDownList([
-        'первый' => 'Москва, Ленина, 1',
-        'второй' => 'Москва, Ленина, 2',
-        'третий' => 'Москва, Ленина, 4',
-    ]) ?>
+    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 

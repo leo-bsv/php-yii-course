@@ -33,10 +33,7 @@ class Order extends \yii\db\ActiveRecord
             [['id'], 'required'],
             [['id'], 'integer'],
             [['created_at'], 'safe'],
-            [['name'], 'string', 'max' => 255],
-            [['address'], 'filter', 'filter' => 'strip_tags'],
-            [['email'], 'email'],
-            [['phone'], 'number', ],
+            [['name', 'address', 'email'], 'string', 'max' => 255],
             [['phone'], 'string', 'max' => 10],
         ];
     }
