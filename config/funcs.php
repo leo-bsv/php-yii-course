@@ -5,7 +5,7 @@ function _log($data) {
 }
 
 function _end($data) {
-    echo yii\helpers\VarDumper::dampAsString($data, 5, true);
+    echo yii\helpers\VarDumper::dumpAsString($data, 5, true);
     exit();
 }
 
