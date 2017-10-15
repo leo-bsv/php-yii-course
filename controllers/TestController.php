@@ -21,70 +21,24 @@ class TestController extends Controller
      */
     public function actionIndex()
     {
-        //_end(app()->db->createCommand("select * from {{order}}")->queryAll());
-//        app()->db->getQueryBuilder()->insert($table, $columns, $params)
-//        _end((new Query())->select(['name','email'])->from('order'));
-        
-//        app()->db->createCommand()->
-//                insert('evrnt_user', [
-//                    'username' => 'Ali',
-//                    'name' => 'Мухамед',
-//                    'surname' => 'Али',
-//                    'password' => ' jtjkgidjf',
-//                    'salt' => ' fdhsgsdfg'
-//                ])->execute();
-//        app()->db->createCommand()->
-//                insert('evrnt_user', [
-//                    'username' => 'Mike',
-//                    'name' => 'Майк',
-//                    'surname' => 'Тайсон',
-//                    'password' => 'asdfasdf',
-//                    'salt' => 'gfhfdg'
-//                ])->execute();
-//        app()->db->createCommand()->
-//                insert('evrnt_user', [
-//                    'username' => 'Kostia',
-//                    'name' => 'Костя',
-//                    'surname' => 'Дзю',
-//                    'password' => 'dfasdf',
-//                    'salt' => 'ghdfhgsdf'
-//                ])->execute();
-//        _end((new Query())->
-//            from('evrnt_user')->
-//            where(['id'=>'1'])->
-//            all());
-//        _end((new Query())->
-//            from('evrnt_user')->
-//            orderBy(['name' => SORT_ASC])->
-//            all());
-//        _end((new Query())->
-//            from('evrnt_user')->
-//            count());
-//        _end(app()->db->createCommand()->batchInsert(
-//                'evrnt_note',
-//                ['text', 'creator'],
-//                [
-//                    ['Пробежка', 1],
-//                    ['Душ', 1],
-//                    ['Тренировка', 1],
-//                ]
-//                )->execute());
-        
-        $responce = (new Query())->
-                from('evrnt_note')->
-                innerJoin('evrnt_user', 'evrnt_note.creator = evrnt_user.id')
-                ->all();
-        _log($responce);
 
-        $model = new Product();
-        $model->id = '1';
-        $model->name = 'Карманный справочник Linux';
-        $model->price = '132';
-        $model->category = 'Книги';
+//        $model = new Product();
+//        $model->id = '1';
+//        $model->name = 'Карманный справочник Linux';
+//        $model->price = '132';
+//        $model->category = 'Книги';
+        
+//        \Yii::$app->db->createCommand()->
+//        addForeignKey('fx_access_user', 'evrnt_access', ['user_id'], 'evrnt_user', ['id'])->execute();
+//        \Yii::$app->db->createCommand()->
+//        addForeignKey('fx_access_note', 'evrnt_access', ['note_id'], 'evrnt_note', ['id'])->execute();
+//        \Yii::$app->db->createCommand()-> 
+//        addForeignKey('fx_note_user', 'evrnt_note', ['creator'], 'evrnt_user', ['id'])->execute();
+
+        _end();
         
         return $this->render('index', [
             'model' => $model,
-            'responce' => $responce
         ]);
     }
 

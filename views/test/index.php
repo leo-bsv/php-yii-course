@@ -13,7 +13,6 @@ $this->title = 'My Yii Application';
     </div>
 
     <div class="body-content">
-        <?php // yii\helpers\VarDumper::dump($model, 1, true) ?>
-        <?php yii\helpers\VarDumper::dump($responce, 1, true) ?>
+        <?php yii\helpers\VarDumper::dump($model, 1, true) ?>
     </div>
 </div>
